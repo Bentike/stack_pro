@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IWSempire Gadgets Store</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">IWSempire</div>
+      <nav class="main-nav">
+        <a href="#intro">Intro</a>
+        <a href="#about">About</a>
+        <a href="#shop">Shop</a>
+      </nav>
+      <button id="cartBtn" class="cart-btn" aria-haspopup="dialog">
+        <img src="img/cart.svg" alt="cart-icon"> <span id="cartCount" class="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO / INTRO -->
+  <section id="intro" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>THE<br>IWSempire<br>STORE</h1>
+        <p class="cta-sub">Your one-stop shop for tranquil gadgets</p>
+        <a href="#shop" class="btn shop-now">SHOP NOW</a>
+      </div>
+      <div class="hero-visual">
+        <!-- Use your own image or the provided assets -->
+        <img src="img/heroImage.svg" alt="hero phone" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container">
+      <p>
+        IWSempire Store is a hypothetical online store for gadgets we believe every
+        ‘Millenial’ or ‘Gen-Z’ should have today. We've got mobile phones, laptops,
+        smartwatches and other gadgets. Explore all our gadgets and choose the ones
+        that suit you.
+      </p>
+    </div>
+  </section>
+
+  <!-- SHOP / PRODUCTS -->
+  <section id="shop" class="products">
+    <div class="container">
+      <h2>OUR GADGETS</h2>
+      <div id="productGrid" class="product-grid">
+        <!-- products are injected here by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="logo">IWSempire</div>
+      <div class="attribution">Designed and Crafted by IWS Tech Solutions</div>
+    </div>
+  </footer>
+
+  <!-- CART MODAL -->
+  <div id="cartModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <div class="modal cart-modal" role="document">
+      <h3 id="cartTitle">Shopping Cart</h3>
+      <div class="modal-content">
+        <div class="cart-items" id="cartItems">
+          <!-- dynamic items -->
+        </div>
+
+        <form id="userForm" class="user-form" novalidate>
+          <h4>Buyer Details</h4>
+          <label>
+            <span>Name</span>
+            <input type="text" id="name" name="name" required />
+            <small class="error" data-for="name"></small>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" id="email" name="email" required />
+            <small class="error" data-for="email"></small>
+          </label>
+          <label>
+            <span>Phone</span>
+            <input type="text" id="phone" name="phone" required />
+            <small class="error" data-for="phone"></small>
+          </label>
+        </form>
+
+        <div class="cart-summary">
+          <h4>Summary</h4>
+          <div class="summary-lines">
+            <div>Total items: <span id="summaryCount">0</span></div>
+            <div>Total amount: ₦<span id="summaryTotal">0.00</span></div>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button id="continueBtn" class="btn secondary">Continue Shopping</button>
+          <button id="checkoutBtn" class="btn primary">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUMMARY MODAL (after successful payment) -->
+  <div id="summaryModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="summaryTitle">
+    <div class="modal summary-modal" role="document">
+      <h3 id="summaryTitle">Purchase Successful</h3>
+      <div id="summaryContent">
+        <!-- dynamic summary text & order items -->
+      </div>
+      <div class="modal-actions">
+        <button id="summaryOk" class="btn primary">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Paystack script -->
+  <script src="https://js.paystack.co/v2/inline.js"></script>
+
+  <!-- App script -->
+  <script src="script.js"></script>
+</body>
+</html>
